@@ -1,8 +1,7 @@
 #!/bin/bash
-
-### Usage: mgrep source_file pattern1 pattern2 pattern3 ... patternN
-
 myArray=( "$@" )
+mkdir $1.dir
+cd $1.dir
 c=0
 for i in "${myArray[@]}"
 do
@@ -11,7 +10,8 @@ do
    # do whatever on $i
    if [ $c -gt 1 ]; then
       echo "$((c-1)): Creating file $1-$i.out"
-      cat $1 | grep -i $i > $1-$i.out
+      cat ../$1 | grep -i $i > $1-$i.out
    fi
 
 done
+
