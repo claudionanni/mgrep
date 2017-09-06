@@ -1,5 +1,6 @@
 #!/bin/bash
 myArray=( "$@" )
+echo "Creating dir to store files in $1.dir."
 mkdir $1.dir
 cd $1.dir
 c=0
